@@ -1,13 +1,18 @@
 import React from 'react'
-import CharacterList from './components/CharacterList'
+import { BrowserRouter } from 'react-router-dom';
 
 import GlobalStyle from './styles/global'
+import Routes from './routes';
 
-export default function App(){
+const App = () => {
   return(
     <>
-      <CharacterList/>
+      <BrowserRouter>
+        <Routes/>
+      </BrowserRouter>
       <GlobalStyle/>
     </>
   )  
 }
+
+export default App;

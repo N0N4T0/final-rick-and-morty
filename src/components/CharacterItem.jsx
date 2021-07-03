@@ -9,7 +9,7 @@ export default function CharacterItem(props){
                 <h3>{props.chars.name}</h3>
                 <p>{props.chars.gender}</p>
             </span>
-            <a href="www.g">Adcionar favorito</a>
+            <a href="www.g">Adcionar a favorito</a>
         </div>
     )
 }

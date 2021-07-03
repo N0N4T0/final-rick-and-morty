@@ -1,6 +1,24 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { shade,darken } from 'polished';
 
+export const Header = styled.header`
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+
+    img {
+        width: 36%;
+    }
+
+    a {
+        display: inline-flex;
+        align-self: center;
+        text-align: center;
+        text-decoration: none;
+        align-items: center;
+        color: #d3da4d;
+    }
+`;
 
 export const Title = styled.h1`
     font-size: 38px;
@@ -10,10 +28,6 @@ export const Title = styled.h1`
 
     margin: 0 auto;
     margin-top: 150px;
-`;
-
-export const Img = styled.img`
-    width: 36%;
 `;
 
 export const Form = styled.form`
@@ -31,16 +45,6 @@ export const Form = styled.form`
         color: #3a3a3a;
         border: 2px solid #fff;
         border-right: 0;
-
-        /* ${props =>
-            props.hasError &&
-            css`
-                border-color: #c53030;
-            `}
-
-        &::placeholder {
-            color: #508495;
-        } */
     }
 
     button {
@@ -86,9 +90,17 @@ export const Characters = styled.section`
             align-items: center;
             justify-content: center;
             background-color: #D3EF76;
-            color: #fff;
+            
+            height: 65px;
 
-            height: 50px;
+            h3 {
+                text-align: center;
+                color: #3a3a3a;
+            }
+
+            p{
+                color: rgb(122, 110, 110);
+            }
         }
 
         a {
@@ -96,7 +108,7 @@ export const Characters = styled.section`
             align-items: center;
             justify-content: center;
 
-            height: 30px;
+            height: 35px;
 
             background-color: #ccf0f7;
 

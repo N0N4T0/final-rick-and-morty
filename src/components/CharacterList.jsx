@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {FiChevronRight} from 'react-icons/fi'
+
 import axios from "axios";
 
 import CharacterItem from "./CharacterItem";
 
-import { Img, Form, Title, Characters, Error } from '../styles/characterList';
+import { Header, Form, Title, Characters, Error } from '../styles/characterList';
 import logoImg from '../assets/logo.svg';
 
 
@@ -38,7 +41,14 @@ export default function CharacterList() {
 
   return (
     <>
-        <Img src={logoImg} alt="Rick and Morty" />
+        <Header>
+            <img src={logoImg} alt="Rick and Morty" />
+            <Link to="/favorites">
+                <h3>Meus Favoritos</h3>
+                <FiChevronRight size={30}/>
+            </Link>
+        </Header>
+        
         <Title>Explore os personagens da série</Title>
 
         <Form onSubmit={handleAddCharacter}>
