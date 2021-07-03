@@ -103,7 +103,7 @@ export const Characters = styled.section`
             }
         }
 
-        a {
+        button {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -112,7 +112,7 @@ export const Characters = styled.section`
 
             background-color: #ccf0f7;
 
-            text-decoration: none;
+            border: none;
             color: #3a3a3a;
             font-weight: 600;
             transition: 0.2s;
