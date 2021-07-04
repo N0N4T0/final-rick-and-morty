@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
+import axios from 'axios'
 
 export default function CharacterItem(props){
-    // const [newFavoriteChar, setNewFavoriteChar] = useState('')
+    // const [newFavoriteChar, setNewFavoriteChar] = useState([])
     const [favoritesChars, setFavoritesChars] = useState(() => {
         const storagedFavorites = localStorage.getItem(
             '@RickAndMorty:favoritesChars',
@@ -27,7 +28,7 @@ export default function CharacterItem(props){
 
         // Salvando somente um no localstorage
         const newFavoriteChar = event
-        setFavoritesChars(...favoritesChars, newFavoriteChar)
+        setFavoritesChars([...favoritesChars, newFavoriteChar])
 
     }
 
@@ -42,7 +43,7 @@ export default function CharacterItem(props){
                 <p>{props.chars.gender}</p>
             </span>
             <button 
-                value={props.chars.name}
+                value={props.chars.id}
                 onClick={e => handleAddToFavoriteCharacters(e.target.value)}
             >
                 Adcionar a favorito

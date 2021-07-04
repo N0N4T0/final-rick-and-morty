@@ -5,6 +5,7 @@ import {FiChevronLeft} from 'react-icons/fi'
 import { Header } from '../styles/characterList';
 
 export default function FavoritesCharacters(){
+
     return (
        <>
         <Header>
@@ -13,6 +14,7 @@ export default function FavoritesCharacters(){
                 <h3>Volta ao início</h3>
             </Link>
         </Header>
+
        </>
     )
 }
