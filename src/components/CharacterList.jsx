@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {FiChevronRight} from 'react-icons/fi'
 
-import axios from "axios";
+import api from '../services/api'
 
 import CharacterItem from "./CharacterItem";
 
@@ -16,11 +16,10 @@ export default function CharacterList() {
     const [newChar, setNewChar] = useState('');
     const [inputError, setInputError] = useState('');
 
-    const apiSearched = `https://rickandmortyapi.com/api/character/?name=${newChar}`
+    const searchByName = `/?name=${newChar}`
 
     function handleAddCharacter(event){
         event.preventDefault();
-        // console.log(newChar)
 
         if (!newChar) {
             setInputError('Digite um nome de personagem válido');
@@ -28,12 +27,10 @@ export default function CharacterList() {
             return;
         }
 
-        
-        axios
-            .get(apiSearched)
+        api.get(searchByName)
             .then(response => {
-                setCharacters(response.data.results)
-            })       
+            setCharacters(response.data.results)
+        })   
 
         setNewChar('')
         setInputError('');
@@ -43,7 +40,7 @@ export default function CharacterList() {
     <>
         <Header>
             <img src={logoImg} alt="Rick and Morty" />
-            <Link to="/favorites">
+            <Link to="/">
                 <h3>Meus Favoritos</h3>
                 <FiChevronRight size={30}/>
             </Link>
